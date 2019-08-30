@@ -1,0 +1,9 @@
+{
+  "editor.rulers": [80, 120],
+  "editor.tabSize": 4,
+  "python.pythonPath": ".venv/bin/python3",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": ["--max-line-length=120", "--ignore=D100,W605,W504", "--exclude=migrations"]
+}

@@ -1,0 +1,14 @@
+*.log
+*.pot
+*.py[cod]
+*.rdb
+*.scssc
+*.sock
+*.sqlite3
+
+.coverage
+.DS_Store
+.env*
+!.env.sample
+
+.venv/

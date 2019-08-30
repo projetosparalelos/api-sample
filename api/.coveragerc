@@ -1,0 +1,16 @@
+[run]
+source = .
+omit =
+    */admin.py
+    */apps.py
+    */urls.py
+    */migrations*
+    */tests*
+    core/celery.py
+    core/settings.py
+    core/wsgi.py
+    fabfile.py
+    manage.py
+
+[html]
+directory = ../reports/coverage
