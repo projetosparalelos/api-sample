@@ -218,7 +218,7 @@ JWT_AUTH = {
 # CORS
 # https://github.com/zestedesavoir/django-cors-middleware
 
-CORS_ORIGIN_ALLOW_ALL = DEBUG
+CORS_ORIGIN_ALLOW_ALL = config('CORS_ORIGIN_ALLOW_ALL', cast=bool)
 
 CORS_ORIGIN_WHITELIST = config('CORS_ORIGIN_WHITELIST', cast=Csv())
 
