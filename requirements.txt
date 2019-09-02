@@ -15,3 +15,4 @@ flake8==3.7.7
 isort==4.3.21
 python-decouple==3.1
 redis==3.2.1
+uwsgi==2.0.18
