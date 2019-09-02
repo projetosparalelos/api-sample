@@ -19,6 +19,10 @@ ENV = config('ENV')
 
 DEBUG = config('DEBUG', cast=bool)
 
+BASE_ADMIN_URL = config('BASE_ADMIN_URL')
+
+BASE_DOCS_URL = config('BASE_DOCS_URL')
+
 SECRET_KEY = config('SECRET_KEY')
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
@@ -177,7 +181,7 @@ EMAIL_USE_SSL = config('EMAIL_USE_SSL', cast=bool)
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        'core.permissions.IsAuthenticatedOrDocs',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'core.drf_authentication.JSONWebTokenAuthentication',
@@ -196,7 +200,7 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_THROTTLE_RATES': {
         'anon': '100/day',
-        'user': '2000/day'
+        'user': '10000/day'
     },
     'EXCEPTION_HANDLER': 'core.drf_exception_handler.custom_exception_handler',
 }

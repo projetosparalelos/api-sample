@@ -24,8 +24,8 @@ if settings.DEBUG or settings.DJANGO_ADMIN:
     admin.site.site_header = admin.site.site_title = "Todo List API"
     admin.site.index_title = "Apps"
     admin.site.unregister(Group)
-    urlpatterns.insert(0, path('admin/', admin.site.urls))
-    urlpatterns.insert(1, path('docs/', include_docs_urls(title="Todo List API")))
+    urlpatterns.insert(0, path(settings.BASE_ADMIN_URL, admin.site.urls))
+    urlpatterns.insert(1, path(settings.BASE_DOCS_URL, include_docs_urls(title="Todo List API")))
 
 if settings.DEBUG:  # pragma: no cover
     urlpatterns += \
