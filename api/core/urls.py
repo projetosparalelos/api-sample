@@ -3,11 +3,21 @@ from django.conf.urls.static import static
 from django.urls import include, path
 from django.views.generic import TemplateView
 
-from .views import APIRootView, VersionView
+from .views import APIRootView, SimulateAuthenticationFailedView, SimulateInternalServerErrorView, VersionView
 
 urlpatterns = [
     path('', APIRootView.as_view(), name='index'),
-    path('version', VersionView.as_view(), name='version'),
+    path('core/version/', VersionView.as_view(), name='version'),
+    path(
+        'core/simulate-authentication-failed/',
+        SimulateAuthenticationFailedView.as_view(),
+        name='simulate_authentication_failed',
+    ),
+    path(
+        'core/simulate-internal-server-error/',
+        SimulateInternalServerErrorView.as_view(),
+        name='simulate_internal_server_error',
+    ),
 
     path('sitemap.xml', TemplateView.as_view(template_name='core/sitemap.xml', content_type='text/xml')),
     path('robots.txt', TemplateView.as_view(template_name='core/robots.txt', content_type='text/plain')),
