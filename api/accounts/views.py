@@ -1,4 +1,3 @@
-import time
 from collections import OrderedDict
 
 from rest_framework import views, viewsets
@@ -48,10 +47,6 @@ class LogInView(CreateAPIView):
 
     def perform_create(self, serializer):
         pass  # Override to not do anything.
-
-    def post(self, request, *args, **kwargs):
-        time.sleep(3)
-        return self.create(request, *args, **kwargs)
 
 
 class RefreshJSONWebToken(JSONWebTokenAPIView):
