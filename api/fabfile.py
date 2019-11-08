@@ -9,9 +9,8 @@ def lint():
     local('flake8 --max-line-length=119 --exclude=migrations .')
 
 
-def test(report='report'):
-    local('coverage run manage.py test --settings=core.settings .')
-    local('coverage {}'.format(report))
+def test(report='term'):
+    local('pytest --cov=. --cov-report {}'.format(report))
     if report == 'html':
         html = os.path.join(
             os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
